@@ -22,12 +22,12 @@ node {
       def resourceGroup = 'java-jenkins'
       def webAppName = 'java-jenkinswebapp'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: 'azure-java', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+      // withCredentials([usernamePassword(credentialsId: 'azure-java', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
-          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+          az login --service-principal -u 713e403c-7b93-436e-aae6-f62a87da748e -p wE38Q~c42-EfE6TqrUNWdlk43o1P00V_m1GXTaW_ -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
         '''
-      }
+      // }
       // get publish settings
       def pubProfilesJson = sh script: "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName", returnStdout: true
       def ftpProfile = getFtpPublishProfile pubProfilesJson
