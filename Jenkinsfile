@@ -20,7 +20,7 @@ node {
   
     stage('deploy') {
       def resourceGroup = 'java-jenkins'
-      def webAppName = 'java-jenkinswebapp'
+      def webAppName = 'new-java'
       // login Azure
       // withCredentials([usernamePassword(credentialsId: 'azure-java', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
